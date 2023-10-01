@@ -35,4 +35,5 @@ enum class Direction {
 ```
 
 Как это выглядит:
+
 ![Example](raw/example.png)
