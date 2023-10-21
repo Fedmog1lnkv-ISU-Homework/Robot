@@ -1,4 +1,22 @@
-class Robot(var x: Int, var y: Int, var direction: Direction) {
+class Robot(private var _x: Int, private var _y: Int, private var _direction: Direction) {
+    var x: Int
+        get() = _x
+        private set(value) {
+            _x = value
+        }
+
+    var y: Int
+        get() = _y
+        private set(value) {
+            _y = value
+        }
+
+    var direction: Direction
+        get() = _direction
+        private set(value) {
+            _direction = value
+        }
+
     fun turnLeft() {
         direction = when (direction) {
             Direction.UP -> Direction.LEFT
