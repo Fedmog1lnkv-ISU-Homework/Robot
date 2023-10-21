@@ -7,21 +7,26 @@ fun moveRobot(r: Robot, toX: Int, toY: Int) {
         val dx = toX - r.x
         val dy = toY - r.y
 
-        if (dx > 0) {
-            while (r.direction != Direction.RIGHT) {
-                r.turnRight()
+        when {
+            dx > 0 -> {
+                while (r.direction != Direction.RIGHT) {
+                    r.turnRight()
+                }
             }
-        } else if (dx < 0) {
-            while (r.direction != Direction.LEFT) {
-                r.turnLeft()
+            dx < 0 -> {
+                while (r.direction != Direction.LEFT) {
+                    r.turnLeft()
+                }
             }
-        } else if (dy > 0) {
-            while (r.direction != Direction.UP) {
-                r.turnRight()
+            dy > 0 -> {
+                while (r.direction != Direction.UP) {
+                    r.turnRight()
+                }
             }
-        } else if (dy < 0) {
-            while (r.direction != Direction.DOWN) {
-                r.turnLeft()
+            dy < 0 -> {
+                while (r.direction != Direction.DOWN) {
+                    r.turnLeft()
+                }
             }
         }
 
@@ -50,4 +55,7 @@ fun main() {
     println("Робот 2: поворот направо")
     printRobots(r1, r2)
 
+    moveRobot(r2, 2, 3)
+    println("Робот 2: перемещение в точку (2, 3)")
+    printRobots(r1, r2)
 }
